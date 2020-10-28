@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'pages#accueil'
+  
+  get '/team', to: 'pages#team'
+
+  get '/new_gossip', to: 'pages#new_gossip'
+
+  post '/new_gossip', to: 'pages#create_gossip'
+  
+  get '/contact', to: 'pages#contact'
+  
+  get '/welcome(/:name)', to: 'pages#welcome'
+  
+  get '/potin/:id', to: 'potins#potin'
+  
+  get '/user/:id', to: 'users#user'
 end

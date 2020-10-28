@@ -38,7 +38,6 @@ class CreationTablesPrincipales < ActiveRecord::Migration[6.0]
  	  	t.belongs_to :tag, index: true 
       t.timestamps
     end
-
-  
+    
   end
 end
