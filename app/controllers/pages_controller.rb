@@ -9,10 +9,16 @@ class PagesController < ApplicationController
 	end
 
 	def create_gossip
-		gossip = Potin.new
-		gossip.title = params["title"]
-		#gossip.content = params["content"]
-		gossip.save
+		@gossip = Potin.new
+		@gossip.user = User.all.sample
+		@gossip.title = params[:title]
+		@gossip.content = params[:content]
+		if
+			@gossip.save
+			redirect_to "/"
+		else
+			redirect_to "/new_gossip"
+		end
 	end
 
 	def contact
